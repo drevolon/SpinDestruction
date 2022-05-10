@@ -25,13 +25,13 @@ public class PatrolView : MonoBehaviour
 
     private void PointUpdate()
     {
-        if (ragDoll is not null)
+        if (ragDoll is null)
         {
-            i = Random.Range(0, point.Count);
+            i = Random.Range(0, pointView.Length);
         }
         else
         {
-            i = Random.Range(0, pointView.Length);
+            i = Random.Range(0, point.Count);
         }
     }
 
@@ -41,8 +41,8 @@ public class PatrolView : MonoBehaviour
         {
             PointUpdate();
         }
-        if (ragDoll is not null) agent.SetDestination(point[i].position); else
-        agent.SetDestination(pointView[i].GetComponent<Transform>().position);
-        
+        if (ragDoll is null) agent.SetDestination(pointView[i].GetComponent<Transform>().position);
+        else
+            agent.SetDestination(point[i].position);
     }
 }

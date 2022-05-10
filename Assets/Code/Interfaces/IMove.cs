@@ -1,7 +1,7 @@
 ﻿public interface IMove
 {
-    public float Speed { get; set; } 
-    public void Move();
+    float Speed { get; set; } 
+    void Move();
 
 }
 

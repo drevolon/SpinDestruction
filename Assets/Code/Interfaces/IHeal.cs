@@ -1,4 +1,4 @@
 ﻿internal interface IHeal
 {
-    public int HP { get; set; }
+    int HP { get; set; }
 }
